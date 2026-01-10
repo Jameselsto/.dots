@@ -1,0 +1,21 @@
+! I pinched this from apple
+*background: #070707
+*foreground: #ffffff
+*color0:  #ffffff
+*color1:  #070707
+*color2:  #a2a2a7
+*color3:  #434345
+*color4:  #ff4f44
+*color5:  #ffa914
+*color6:  #ffe014
+*color7:  #3ce155
+*color8:  #6ce0db
+*color9:  #44d4ed
+*color10: #5acdfa
+*color11: #148eff
+*color12: #6361f2
+*color13: #cc65ff
+*color14: #ff4169
+*color15: #b69872
+
+Xft.dpi: 192
