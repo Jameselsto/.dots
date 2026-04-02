@@ -13,32 +13,24 @@ setopt CORRECT              # spelling correction for commands
 setopt NO_BEEP              # silence beeps
 
 # Completion
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-autoload -Uz compinit
-compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # case-insensitive
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# autoload -Uz compinit
+# compinit
+# zstyle ':completion:*' menu select
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # case-insensitive
 
-# Prompt (simple: user@host cwd $)
-PROMPT='%n@%m %1~ $ '
+# Prompt
+NEWLINE=$'\n'
+PROMPT="${NEWLINE}%K{#ffffff}%F{#070707} %n@%m %K{#ffffff}%~ %f%k ❯ "
 
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -CF'
 alias grep='grep --color=auto'
 alias n='nvim'
 alias mount-MOVR='sudo systemctl start home-james-Projects-MOVR.mount'
 alias umount-MOVR='sudo systemctl stop home-james-Projects-MOVR.mount'
-
-# Git shortcuts
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gl='git pull'
-alias gd='git diff'
 
 # Safety
 alias rm='rm -i'
@@ -54,4 +46,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.cargo/bin:$PATH"
