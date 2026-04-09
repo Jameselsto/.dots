@@ -17,7 +17,7 @@ sysmodmap="$xinitdir/.Xmodmap"
 # merge in defaults and keymaps
 
 if [ -f "$sysresources" ]; then
-    if [ -x /usr/bin/cpp ] ; then
+    if [ -x /usr/bin/cpp ]; then
         "$xrdb" -merge "$sysresources"
     else
         "$xrdb" -nocpp -merge "$sysresources"
@@ -29,7 +29,7 @@ if [ -f "$sysmodmap" ]; then
 fi
 
 if [ -f "$userresources" ]; then
-    if [ -x /usr/bin/cpp ] ; then
+    if [ -x /usr/bin/cpp ]; then
         "$xrdb" -merge "$userresources"
     else
         "$xrdb" -nocpp -merge "$userresources"
@@ -42,16 +42,13 @@ fi
 
 # start some nice programs
 
-if [ -d "$xinitdir"/xinitrc.d ] ; then
-	for f in "$xinitdir/xinitrc.d"/?*.sh ; do
-		[ -x "$f" ] && . "$f"
-	done
-	unset f
+if [ -d "$xinitdir"/xinitrc.d ]; then
+    for f in "$xinitdir/xinitrc.d"/?*.sh; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
 
 xrandr --output DP-2 --mode 3840x2160 --rate 165
-
 xmodmap ~/.xmodmap/config
-
 exec i3
-

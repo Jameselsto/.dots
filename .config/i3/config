@@ -10,7 +10,9 @@ set_from_resource $red        i3wm.color4         #ff4f44
 set_from_resource $blue       i3wm.color11        #148eff
 set_from_resource $blue_light i3wm.color10        #5acdfa
 
-for_window [class=".*"] border pixel 2
+gaps inner 8
+
+for_window [class=".*"] border pixel 0
 # class                 border  backgr. text   indicator   child_border
 client.focused          $gray   $blue   $black $gray       $gray
 client.focused_inactive $gray   $blue   $white $black      $black
@@ -25,6 +27,9 @@ font pango:JetBrainsMono Nerd Font 14
 # START THIS SHIT
 # Start XDG autostart .desktop files using dex. idk what this does but im to scared to delete it
 exec --no-startup-id dex --autostart --environment i3
+
+# Mousey bye bye
+exec --no-startup-id unclutter
 
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -56,8 +61,8 @@ tiling_drag modifier titlebar
 ### Start this ###
 bindsym $mod+q kill
 bindsym $mod+Return exec alacritty
-bindsym $mod+d exec --no-startup-id dmenu_run
-bindsym $mod+b exec --no-startup-id zen-browser
+bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+b exec --no-startup-id qutebrowser
 bindsym $mod+m exec --no-startup-id spotify-launcher
 bindsym $mod+u exec --no-startup-id blueman-manager
 bindsym $mod+n exec --no-startup-id obsidian
